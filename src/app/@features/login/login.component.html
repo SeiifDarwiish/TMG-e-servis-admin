@@ -1,0 +1,57 @@
+<section class="grid grid-cols-2">
+  <section class="w-4/5 m-auto">
+    <img class="w-1/4" src="assets/images/logo.png" alt="" />
+    <h1 class="font-bold text-2xl mt-20 mb-8">Welcome To Your Account</h1>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <fieldset class="flex flex-col gap-y-1 mb-3">
+        <label class="font-medium text-neutral-700 text-sm" for="">Email</label>
+        <input
+          class="w-full rounded-md text-center outline-none h-8 border border-gray-200 bg-white"
+          type="text"
+          formControlName="mail"
+          placeholder="Enter your email please"
+          [class.border-red-700]="
+            loginForm.get('mail')?.invalid &&
+            (loginForm.get('mail')?.dirty || loginForm.get('mail')?.touched)
+          "
+          [class.placeholder-red-700]="
+            loginForm.get('mail')?.invalid &&
+            (loginForm.get('mail')?.dirty || loginForm.get('mail')?.touched)
+          "
+        />
+      </fieldset>
+      <span></span>
+      <fieldset class="flex flex-col gap-y-1">
+        <label class="font-medium text-neutral-700 text-sm" for=""
+          >Password</label
+        >
+        <input
+          class="w-full rounded-md text-center outline-none h-8 border border-gray-200 bg-white"
+          type="password"
+          formControlName="password"
+          placeholder="Enter your password please"
+          [class.border-red-700]="
+            loginForm.get('password')?.invalid &&
+            (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)
+          "
+          [class.placeholder-red-700]="
+            loginForm.get('password')?.invalid &&
+            (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)
+          "
+        />
+      </fieldset>
+      <div>
+        <button
+          type="submit"
+          [disabled]="!loginForm.valid"
+          class="w-full mt-6 py-1 text-white rounded-2xl font-medium text-base bg-blue-950 hover:bg-blue-900"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </section>
+  <section class="w-full">
+    <img class="w-full h-screen" src="assets/images/home.png" alt="" />
+  </section>
+</section>

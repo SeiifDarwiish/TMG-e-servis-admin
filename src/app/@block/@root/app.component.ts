@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoginComponent } from 'src/app/@features/login/login.component';
+
 
 @Component({
   selector: 'app-root',

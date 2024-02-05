@@ -1,0 +1,104 @@
+<div (click)="route()" class="space-x-3 flex items-center w-fit">
+  <i class="pi pi-angle-left"></i>
+  <a class="font-bold m-auto">Back</a>
+</div>
+<div class="flex justify-between gap-x-4">
+  <section
+    class="border border-[#F2F4F7] rounded-md p-4 w-full mt-8 bg-white space-y-10"
+  >
+    <section class="flex justify-between pb-6 border-b border-b-[#F2F4F7]">
+      <div>
+        <label class="opacity-55 font-medium text-xs" for="">Project</label>
+        <p class="font-semibold text-xs">{{unit.projectEn}}</p>
+      </div>
+      <div>
+        <label class="opacity-55 font-medium text-xs" for="">Unit Type</label>
+        <p class="font-semibold text-xs">{{unit.unitTypeEn}}</p>
+      </div>
+      <div>
+        <label class="opacity-55 font-medium text-xs" for="">Building No.</label>
+        <p class="font-semibold text-xs">{{ unit.buildingNo }}</p>
+      </div>
+      <div>
+        <label class="opacity-55 font-medium text-xs" for=""
+          >Group No.</label
+        >
+        <p class="font-semibold text-xs">{{unit.groupNo}}</p>
+      </div>
+      <div>
+        <label class="opacity-55 font-medium text-xs" for="">Unit No.</label>
+        <p class="font-semibold text-xs">{{unit.unitNo}}</p>
+      </div>
+      <div>
+        <label class="opacity-55 font-medium text-xs" for="">Full Name</label>
+        <p class="font-semibold text-xs">{{unit.ownerName}}</p>
+      </div>
+    </section>
+    <section class="space-y-5">
+      <h1 class="text-[#757575] text-sm font-medium">Documents</h1>
+      <div
+        *ngFor="let x of attachment"
+        class="flex justify-between items-center pl-3"
+      >
+        <div class="flex space-x-2 w-44 items-center">
+          <svg-icon
+            class="bg-[#0036e610] p-2 rounded-lg"
+            name=""
+          ></svg-icon>
+          <span class="opacity-85 font-medium text-sm">{{ x.attachmentName }}</span>
+        </div>
+        <p
+          class="text-[#003462] underline decoration-[#003462] font-medium text-sm"
+          href=""
+        >
+          contract-madinaty.pdf
+        </p>
+        <section class="flex justify-between items-center ml-2">
+          <p
+            class="text-[#003462] underline decoration-[#003462] font-medium text-sm mr-3"
+          >
+            Need Action
+          </p>
+          <form [formGroup]="radioForm" class="flex flex-wrap gap-3">
+            <div
+              class="x flex align-items-center font-medium text-sm bg-[#ff00000d] py-2 px-2 rounded-2xl"
+            >
+              <p-radioButton
+                formControlName="decline"
+                class="text-[#ff0000]"
+                name="decline"
+                label="Decline"
+                value=""
+                inputId=""
+              ></p-radioButton>
+            </div>
+
+            <div
+              class="y flex align-items-center bg-[#00b2590d] font-medium text-sm py-2 px-2 rounded-2xl"
+            >
+              <p-radioButton
+                formControlName="accept"
+                class="text-[#00b259]"
+                name="accept"
+                label="Accept"
+                value=""
+                inputId=""
+              ></p-radioButton>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </section>
+  <section class="w-2/5 mt-8 h-fit">
+    <section *ngFor="let x of [1, 2, 3]" class="mb-3 p-3 bg-[#F2F4F7]">
+      <div class="flex justify-between items-center">
+        <h1 class="text-xs opacity-55 font-medium">Admin (Mohamed Essam)</h1>
+        <p class="text-xs opacity-25">12/02/2024</p>
+      </div>
+      <p class="text-xs font-medium">
+        I had updated the ID file, You can check it again please.
+      </p>
+    </section>
+  </section>
+</div>

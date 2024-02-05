@@ -1,0 +1,63 @@
+<section class="flex font-medium text-sm justify-between w-full">
+  <div>
+    <h1 class="text-yellow-700">Home Page</h1>
+    <p class="text-blue-950 font-bold text-3xl">Header</p>
+  </div>
+  <div>
+    <!-- <app-header-popup></app-header-popup> -->
+    <button
+    (click)="show()"
+      class="flex px-5 py-3 gap-x-2 text-white items-center bg-blue-950 rounded-3xl font-medium"
+    >
+      <img src="assets/icons/plus.svg" alt="" />
+      Add Header
+    </button>
+  </div>
+</section>
+<section class="mt-7">
+  <div class="mb-5" *ngFor="let card of data">
+    <p class="text-blue-950 text-xl font-medium mb-2">{{ card.number }}</p>
+    <section class="bg-white border border-zinc-100 p-4 flex justify-between">
+      <div class="flex w-fit space-x-5 justify-between items-center">
+        <img class="h-[12rem] object-cover rounded-sm" src="{{ card.url }}" alt="" />
+        <div class="space-y-3">
+          <article>
+            <label class="text-xs text-zinc-700" for="">Title</label>
+            <p class="text-sm font-semibold">Simplify Your Life With Our E-Services Platform</p>
+          </article>
+          <article>
+            <label class="text-xs text-zinc-700" for="">Subtitle</label>
+            <p class="text-sm font-semibold">Unit Management</p>
+          </article>
+          <article>
+            <label class="text-xs text-zinc-700" for="">Link</label>
+            <p class="text-sm font-semibold">https://www.talaatmoustafa.com/</p>
+          </article>
+        </div>
+      </div>
+      <div class=" flex flex-col justify-between">
+        <section class="flex space-x-4">
+          <div>
+            <button
+              class="flex w-[7.5rem] justify-center py-3 gap-x-2 text-blue-950 font-medium text-sm bg-zinc-100 "
+            >
+              <img src="assets/icons/trash.svg" alt="" />
+              DELETE
+            </button>
+          </div>
+          <div>
+            <button
+              class="flex w-[7.5rem] justify-center py-3 gap-x-2 text-blue-950 font-medium text-sm bg-zinc-100 "
+            >
+              <img src="assets/icons/file-edit.svg" alt="" />
+              EDIT
+            </button>
+          </div>
+        </section>
+        <section>
+          <p class="text-xs text-end text-zinc-700">Recent Updated: 18 Sep 2023</p>
+        </section>
+      </div>
+    </section>
+  </div>
+</section>
